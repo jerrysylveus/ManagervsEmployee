@@ -51,10 +51,12 @@ public class FileUploadDB extends HttpServlet{
 	     
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        // gets values of text fields
-	        double amount = Double.parseDouble(request.getParameter("amount"));
+	        double amount = Double.valueOf(request.getParameter("amount"));
 	        String description = request.getParameter("description");
 	       int authorid = Integer.parseInt(request.getParameter("authorid"));
 	       int typeid = Integer.parseInt(request.getParameter("typeid"));
+	       //int typeid = Integer.valueOf(request.getParameter("typeid"));
+	       
 	       String timeSubmitted = request.getParameter("timeSubmitted");
 	         
 	        InputStream inputStream = null; // input stream of the upload file
